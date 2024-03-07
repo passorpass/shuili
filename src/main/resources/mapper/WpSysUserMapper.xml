@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuili.mapper.WpSysUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.shuili.entity.WpSysUser">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="nickUsername" column="nick_username" jdbcType="VARCHAR"/>
+            <result property="userEmail" column="user_email" jdbcType="VARCHAR"/>
+            <result property="userPhone" column="user_phone" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="operatorId" column="operator_id" jdbcType="VARCHAR"/>
+            <result property="operatorName" column="operator_name" jdbcType="VARCHAR"/>
+            <result property="autho" column="autho" jdbcType="INTEGER"/>
+            <result property="description" column="description" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,password,
+        nick_username,user_email,user_phone,
+        create_time,update_time,operator_id,
+        operator_name,autho,description
+    </sql>
+
+
+</mapper>

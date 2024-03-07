@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuili.mapper.SysCachecodeMapper">
+
+    <resultMap id="BaseResultMap" type="com.shuili.entity.SysCachecode">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="code" column="code" jdbcType="VARCHAR"/>
+            <result property="userIp" column="user_ip" jdbcType="VARCHAR"/>
+            <result property="creatTime" column="creat_time" jdbcType="TIMESTAMP"/>
+            <result property="experTime" column="exper_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,code,user_ip,
+        creat_time,exper_time
+    </sql>
+    <select id="checkCacheCode" resultType="com.shuili.entity.SysCachecode">
+        SELECT <include refid="Base_Column_List"/>
+        FROM sys_cachecode
+        WHERE exper_time BETWEEN #{nowTime} AND exper_time
+        AND user_ip = #{userIp}
+        AND code = #{cacheCode};
+    </select>
+
+
+</mapper>

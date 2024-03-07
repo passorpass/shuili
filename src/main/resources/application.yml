@@ -1,0 +1,35 @@
+server:
+  port: 82
+
+spring:
+#  redis:
+#    host: 192.168.10.137
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        max-wait: 100ms
+#        min-idle: 0
+#    port: 6379
+#    password: 123456
+
+  devtools:
+    restart:
+      poll-interval: 3000
+      quiet-period: 2999
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shuili
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+
